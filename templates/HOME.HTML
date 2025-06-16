@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omni Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/HOME.css') }}">
+
+
+
+      <!-- Remixicon icons for the interaction -->
+      <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed:wght@700&family=Roboto+Slab&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <nav class="navbar">
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a href="#home" class="nav__link active-link">
+                    <i class="ri-home-4-line"></i>
+                    <span class="title">Home</span>
+                </a>
+            </li>
+            <li class="nav__item">
+              <a href="/image-summarizer" class="nav__link">
+
+                    <i class="ri-image-ai-line"></i>
+                    <span class="title">Image Summarizer</span>
+                </a>
+            </li>
+            
+            
+            
+            
+            <li class="nav__item">
+              <a href="/text-summarizer" class="nav__link">
+                  <i class="ri-text-snippet"></i>
+                  <span class="title">Text Summarizer</span>
+              </a>
+          </li>
+          
+          <li class="nav__item">
+            <a href="/pdf-summarizer" class="nav__link">
+                <i class="ri-file-pdf-2-fill"></i>
+                <span class="title">PDF Summarizer</span>
+            </a>
+        </li>
+        
+        
+            <li class="nav__item">
+                <a href="/video-summarizer" class="nav__link">
+                    <i class="ri-file-video-line"></i>
+                    <span class ="title">Video Summarizer</span>
+                </a>
+            </li>
+        </ul>
+
+        <div class="nav__actions">
+           
+            <!-- Login button -->
+            <i class="ri-user-line profile-icon" id="profile-icon"class="profile-icon"></i>
+          </div>
+
+    </nav>
+
+    
+    
+    <section class="video-section" id="video-section">
+      <video autoplay muted loop id="bg-video">
+        <source src="{{ url_for('static', filename='video/200609-913150862.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <img src="{{ url_for('static', filename='images/Homepage OMNI.png') }}" alt="Omni Summarizer Logo" class="logo">
+    <div class="overlay-text">
+          
+                <div class="overlay-content">
+                    <div class="tagline-left">Turning complex content</div>
+                <div class="tagline-right">into clear summaries.</div>
+                <button class="explore-btn" onclick="document.querySelector('.summarizer-container').scrollIntoView({ behavior: 'smooth' });">
+                    Explore More
+                </button>
+                
+
+                </div>
+            </div>
+        
+        
+    </section>
+
+<!---
+    
+    
+    <section class="video-section">
+        <video id="bg-video" autoplay muted loop>
+            <source src="BG/main.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+    
+    <section class="video-section">
+        <video id="second-video" autoplay muted loop>
+            <source src="BG/sections.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+    
+   
+
+-->
+
+<!---==================================LINE BREAK=====================-->
+<!-- Wherever you want the line -->
+<div class="neon-line"></div>
+
+<div id="lottie-containere" style="width: 300px; height: 300px; margin-top: -105px; float: left; margin-left: 20px;"></div>
+<div id="lottie-container-right" style="width: 300px; height: 300px; margin-top: -105px; float: right; margin-right: 20px;"></div>
+
+
+<!--==========================BUTTONS ===================-->
+<!-- Heading -->
+<h2 class="whatis" style="text-align: center;">
+  <span style="font-family: 'Roboto', sans-serif;">What is </span>
+  <span style="font-family: 'Roboto Slab', serif;">OMNI Summarizer?</span>
+</h2>
+
+<div class="summarizer-container">
+    <section class="summarizer-section">
+      <a href="/image-summarizer" class="nav__link">
+        <div class="summarizer-box">Image Summarizer</div>
+      </a>
+      <a href="/video-summarizer" class="nav__link">
+        <div class="summarizer-box">Video Summarizer</div>
+      </a>
+      
+      <a href="/text-summarizer" class="nav__link">
+        <div class="summarizer-box">Text Summarizer</div>
+      </a>
+      
+      <a href="/pdf-summarizer" class="nav__link">
+        <div class="summarizer-box">PDF Summarizer</div>
+      </a>
+      
+    </section>
+<!-- Wherever you want the vertical line -->
+<div class="neon-vertical-line"></div>
+  
+</div>
+
+
+<div class="summarizer-text">
+  <span>Omni</span> <span>Summarizer</span> <span>is</span> <span>your</span> <span>all-in-one</span>
+  <span>AI-powered</span> <span>companion</span><br> <span>for</span> <span>smarter</span> <span>content</span>
+  <span>understanding.</span> <span>From</span> <span>text</span> <span>and</span> <span>PDFs</span>
+  <span>to</span><br> <span>images</span> <span>and</span> <span>videos,</span> <span>it</span>
+  <span>transforms</span> <span>complex</span> <span>information</span> <span>into</span><br>
+  <span>clear,</span> <span>concise</span> <span>summaries</span> <span>—</span> <span>instantly.</span>
+  <span>Powered</span> <span>by</span> <span>advanced</span> <br><span>multi-modal</span> <span>models</span>
+  <span>and</span> <span>intelligent</span> <span>automation,</span> <span>it</span> <span>helps</span>
+  <span>you</span> <br><span>save</span> <span>time,</span> <span>boost</span> <span>productivity,</span>
+  <span>and</span> <span>get</span> <span>to</span> <span>the</span> <span>point</span> <span>faster</span><br>
+  <span>—</span> <span>all</span> <span>with</span><span>unmatched</span><span>accuracy</span>
+  <span>and</span> <span>elegance.</span>
+</div>
+
+
+<!---==================================LINE BREAK=====================-->
+<!-- Wherever you want the line -->
+<div class="neon-lines"></div>
+
+
+
+
+<!--============================THIRD SECTION ===============-->
+<div class="container">
+    <h2 class="splits" style="text-align: center;">What can you do with our Summarizer tool?</h2>
+    <div class="features-section">
+        <div class="feature-box1">
+            <h3>Simplify text</h3>
+            <p>Make complex information simpler</p>
+        </div>
+        <div class="feature-box2">
+            <h3>Shorten reports</h3>
+            <p>Identify the most important details</p>
+        </div>
+        <div class="feature-box3">
+            <h3>Highlight points</h3>
+            <p>Emphasize key points clearly</p>
+        </div>
+        <div class="feature-box4">
+            <h3>Extract insights</h3>
+            <p>Identify the main ideas</p>
+        </div>
+    </div>
+</div>
+    <!--==================== FOOTER ====================-->
+<footer class="footer">
+    <div class="footer__container container">
+      <div class="footer__logo-section">
+        <a href="#" class="footer__logo">
+          <img src="{{ url_for('static', filename='images/Homepage OMNI.png') }}" alt="Logo" class="logo-image">
+        </a>
+        <p class="footer__description">
+         SUMMARIZE ANYTHING YOU WANT
+        </p>
+      </div>
+  
+      <div class="footer__data grid">
+        <div>
+          <h3 class="footer__title">About</h3>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link">Awards</a></li>
+            <li><a href="#" class="footer__link">FAQs</a></li>
+            <li><a href="#" class="footer__link">Privacy Policy</a></li>
+            <li><a href="#" class="footer__link">Terms of Services</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <h3 class="footer__title">Company</h3>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link">Blogs</a></li>
+            <li><a href="#" class="footer__link">Community</a></li>
+            <li><a href="#" class="footer__link">Our Team</a></li>
+            <li><a href="#" class="footer__link">Help Center</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <h3 class="footer__title">Contact</h3>
+          <ul class="footer__links">
+            <li>
+              <address class="footer__info">
+                ALLURI ABI<br>
+                9704751165
+                
+              </address>
+            </li>
+            <li>
+              <address class="footer__info">
+                ALLEN SAJI THOMAS<br>
+                7025569879
+              </address>
+            </li>
+          </ul>
+        </div>
+  
+        <div>
+          <h3 class="footer__title">Social</h3>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+              <i class="ri-facebook-circle-fill"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+              <i class="ri-instagram-fill"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+              <i class="ri-twitter-x-line"></i>
+            </a>
+          </div>
+        </div>
+  
+        <div>
+          <h3 class="footer__title">Payments</h3>
+          <div class="footer__payments">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-paypal"></i>
+            <i class="fab fa-google-pay"></i>
+            <i class="fas fa-credit-card"></i>
+            <i class="fas fa-money-check-alt"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <span class="footer__copy">
+      &#169; All Rights Reserved By Fighter
+    </span>
+  </footer>
+  
+  <div id="lottie-container"></div>
+  <div id="blur-overlay"></div>
+    
+
+          <!--=============== MAIN JS ===============-->
+          <script src="{{ url_for('static', filename='js/HOME.js') }}"></script>
+          
+          
+          <!--=============== SCROLLREVEAL ===============-->
+<script src="{{ url_for('static', filename='js/scrollreveal.min.js') }}"></script>
+
+         
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
+
+
+         
+
+</body>
+</html>

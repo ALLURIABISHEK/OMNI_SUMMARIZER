@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omni Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/IMAGE.css') }}">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h3>History</h3>
+        <button class="new-chat-btn">+ New Chat</button>
+        <div class="history-container"></div>
+    </div>
+
+    <div class="container">
+        <!-- Left Side: Upload Section -->
+        <div class="upload-section">
+            <div class="upload-box" id="uploadBox">
+                <p class="upload-placeholder">Drag & Drop or Click to Upload</p>
+                <input type="file" id="fileInput" hidden>
+            </div>
+    
+            <!-- Buttons Section -->
+            <button class="option-btn" id="summarizeBtn">Summarize</button>
+            <button class="option-btn" id="captionBtn">Generate Caption</button>
+            <button class="option-btn" id="askQuestionBtn">Ask Question</button>
+            <button class="neon-btn" id="generatesumm">TELL A STORY</button>
+            
+            
+            <!--live cam section-->
+            <button class="option-btn" id="livecamBtn">Live Cam</button>
+            <video id="cameraStream" autoplay playsinline class="hidden"></video>
+            <canvas id="cameraCanvas" class="hidden"></canvas>
+            <button id="captureBtn" class="hidden">Capture</button>
+            <div id="imagePreviewContainer" class="hidden">
+              <img id="previewImage" class="uploaded-image" src="" alt="Preview Image">
+          </div>
+
+            <!-- Input for user question -->
+            <input type="text" id="questionInput" placeholder="Enter your question..." class="hidden">
+        </div>
+    
+        <div class="neon-vertical-line"></div>
+    
+        <!-- Right Side: Image Preview -->
+        <div id="imagePreviewContainer" class="hidden">
+            <img id="previewImage" class="uploaded-image" src="" alt="Preview Image">
+        </div>
+    </div>
+<!-- Output Box -->
+<div id="summaryContainer">
+    <p id="summaryText">Your result will appear here...</p>
+    <button class="copy-btn" onclick="copySummary()">Copy</button>
+</div>
+
+
+<div class="neon-horizontal-line"></div>
+
+
+<h1 class="story" >Want To Generate Story </h1>
+
+<div class="story-upload-box story-upload-box-1">
+<span>1</span>
+<input type="file" id="fileInput1" class="story-file-input" accept="image/*" />
+</div>
+
+<div class="story-upload-box story-upload-box-2">
+<span>2</span>
+<input type="file" id="fileInput2" class="story-file-input" accept="image/*" />
+</div>
+
+<div class="story-upload-box story-upload-box-3">
+<span>3</span>
+<input type="file" id="fileInput3" class="story-file-input" accept="image/*" />
+</div>
+
+<div class="story-upload-box story-upload-box-4">
+<span>4</span>
+<input type="file" id="fileInput4" class="story-file-input" accept="image/*" />
+</div>
+
+
+<div class="neon-horizontal-line2"></div>
+
+
+<div id="storyContainer">
+<p id="Text">Your result will appear here...</p>
+<button class="copy-btn" onclick="copySummary()">Copy</button>
+</div>
+
+
+
+
+
+
+<h1 class = "multi-model"> MULTI-MODEL GENERATION</h1>
+
+
+
+<div class="story-upload-box story-upload-box-5">
+<span>UPLOAD</span>
+<input type="file" id="fileInput5" class="story-file-input" accept="image/*" />
+</div>
+
+
+
+<div id="multi-Container">
+<p id="modelText">Your result will appear here...</p>
+<button class="copy-btn" onclick="copySummary()">Copy</button>
+</div>
+
+<button class = "Gemini-id">Gemini</button>
+
+
+
+
+
+<!--DESCRIPTIONS +++++++++++ ABOUT BLIP -->
+<div id="blip-info" class="info-box">
+<h2>What is BLIP?</h2>
+<p>BLIP (Bootstrapped Language-Image Pretraining) <br>is an AI model <br> that generates meaningful summaries from images, helping users understand visual content quickly and effectively.</p>
+
+</div>
+
+
+<button type="button" class="btnn"id="blip">BLIP-2</button>
+
+<!---
+<button type="button"class="forspace"id="allmodels">forspace</button> -->
+
+
+
+
+<!--====================GEMINI MULTI-MODEL =================-->
+<div id="gemini-info" class="info-box1">
+<h2>What is GEMINI?</h2>
+<p>Summarize with Gemini for fast, accurate, and detailed results. Gemini’s advanced AI ensures clear and concise summaries, making information easier to understand and use.</p>
+
+</div>
+<button type="button" class="gemini-btn"id="gemini">GEMINI </button>
+
+<!-- ===============================T5 MODEL ===================-->
+
+
+<div id="t5-info" class="info-box2">
+<h2>What is CLIP+GPT?</h2>
+<p>"CLIP+GPT combines vision and language by using CLIP to extract visual features and GPT to generate descriptive text.
+It bridges the gap between visual input and language output."</p>
+
+</div>
+<button type="button" class="t5-btn"id="t5">CLIP + Gpt2</button>
+
+
+<!--===================ViT-GPT2=====================-->
+<div id="vit-info" class="info-box3">
+<h2>What is ViT-GPT2?</h2>
+<p>ViT-GPT2 combines a Vision Transformer (ViT) for image understanding with GPT-2 for generating text, allowing it to create meaningful image summaries.</p>
+
+</div>
+<button type="button" class="vit-btn"id="vit">ViT-GPT2</button>
+
+<!--===================GIT=====================-->
+<div id="git-info" class="info-box4">
+<h2>What is GIT?</h2>
+<p>GIT is a vision-language model that analyzes images and generates detailed text descriptions. It effectively summarizes visual content, making it useful for captioning and image understanding.</p>
+
+</div>
+<button type="button" class="git-btn"id="git">GIT</button>
+
+
+
+<div id="allmodels-info" class="info-box5">
+<h2 style="text-align: left;">RUN ALL MODELS?</h2>
+
+<p>"With a single click, unleash the power of all integrated AI models to generate concise image summaries.<br> Get results from BLIP, Gemini, LLaVA, ViT-GPT-4, and more, along with their respective response times <br>displayed for quick comparison. See it all come together in real-time."</p>
+
+</div>
+<button type="button"class="sumall"id="allin">All-in-One Summarize</button>
+
+
+<!---
+
+<button class = "Grok-id">Grok</button> -->
+
+<!--==================== FOOTER ====================--
+<footer class="footer">
+    <div class="footer__container container">
+      <div class="footer__logo-section">
+        <a href="#" class="footer__logo">
+          <img src="static\BG\Homepage OMNI.png" alt="Logo" class="logo-image">
+        </a>
+        <p class="footer__description">
+         SUMMARIZE ANYTHING YOU WANT
+        </p>
+      </div>
+  
+      <div class="footer__data grid">
+        <div>
+          <h3 class="footer__title">About</h3>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link">Awards</a></li>
+            <li><a href="#" class="footer__link">FAQs</a></li>
+            <li><a href="#" class="footer__link">Privacy Policy</a></li>
+            <li><a href="#" class="footer__link">Terms of Services</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <h3 class="footer__title">Company</h3>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link">Blogs</a></li>
+            <li><a href="#" class="footer__link">Community</a></li>
+            <li><a href="#" class="footer__link">Our Team</a></li>
+            <li><a href="#" class="footer__link">Help Center</a></li>
+          </ul>
+        </div>
+  
+        <div>
+          <h3 class="footer__title">Contact</h3>
+          <ul class="footer__links">
+            <li>
+              <address class="footer__info">
+                ALLURI ABI<br>
+                abishekalluri45516
+              </address>
+            </li>
+            <li>
+              <address class="footer__info">
+                9704751165
+              </address>
+            </li>
+          </ul>
+        </div>
+  
+        <div>
+          <h3 class="footer__title">Social</h3>
+          <div class="footer__social">
+            <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+              <i class="ri-facebook-circle-fill"></i>
+            </a>
+            <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+              <i class="ri-instagram-fill"></i>
+            </a>
+            <a href="https://twitter.com/" target="_blank" class="footer__social-link">
+              <i class="ri-twitter-x-line"></i>
+            </a>
+          </div>
+        </div>
+  
+        <div>
+          <h3 class="footer__title">Payments</h3>
+          <div class="footer__payments">
+            <i class="fab fa-cc-visa"></i>
+            <i class="fab fa-cc-mastercard"></i>
+            <i class="fab fa-cc-paypal"></i>
+            <i class="fab fa-google-pay"></i>
+            <i class="fas fa-credit-card"></i>
+            <i class="fas fa-money-check-alt"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <span class="footer__copy">
+      &#169; All Rights Reserved By Fighter
+    </span>
+  </footer> -->
+
+
+  <script src="{{ url_for('static', filename='js/IMAGE.js') }}"></script>
+
+
+</body>
+</html>

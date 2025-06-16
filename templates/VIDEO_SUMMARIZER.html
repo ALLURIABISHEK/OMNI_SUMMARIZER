@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Analyzer Pro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/VIDEO.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="app-title">
+            <i class="fas fa-film"></i>
+            <span>Omni</span>
+        </div>
+        <div class="history-title">
+            <h3>Recent Videos</h3>
+        </div>
+        <div id="history"></div>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>Video Summarizer<span class="subtitle">Powered by Omni SUmmarizer</span></h1>
+        </div>
+        
+        <div class="upload-box" id="uploadBox">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Click or Drag & Drop Video Here</p>
+            <input type="file" id="fileInput" accept="video/*" style="display: none;">
+        </div>
+
+        <!-- Video Preview Container -->
+        <div id="videoPreviewContainer" class="hidden">
+            <video id="videoPreview" class="uploaded-video" controls></video>
+            
+            <div class="action-buttons">
+                <button id="summarize-btn" class="action-btn">
+                    <i class="fas fa-align-left"></i> Summarize
+                </button>
+                <button id="notes-btn" class="action-btn">
+                    <i class="fas fa-list-ul"></i> Generate Notes
+                </button>
+            </div>
+        </div>
+        
+        <div class="result-container">
+            <div class="tabs">
+                <button class="tab-btn active" id="summary-tab">Summary</button>
+                <button class="tab-btn" id="notes-tab">Notes</button>
+                <button class="tab-btn" id="frames-tab">Key Frames</button>
+            </div>
+            
+            <div class="tab-content">
+                <div id="summary-content" class="tab-pane active">
+                    <div id="chat-messages"></div>
+                </div>
+                <div id="notes-content" class="tab-pane">
+                    <div id="notes-messages"></div>
+                </div>
+                <div id="frames-content" class="tab-pane">
+                    <div id="key-frames-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/VIDEO.js') }}"></script>
+</body>
+</html>

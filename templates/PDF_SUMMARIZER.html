@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/PDF.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>PDF Summarizer</h1>
+        <form id="uploadForm">
+            <input type="file" id="pdfFile" name="pdf" accept="application/pdf" required>
+            <button type="submit">Summarize</button>
+        </form>
+        
+        <h2>Summary:</h2>
+        <div id="summary_output" class=" summary_output-box">
+            <p>No summary yet. Upload a file to generate one.</p>
+        </div>
+  
+        <!--<button id="listenButton">Listen to Summary</button>
+        <audio id="audioPlayer" controls style="display:none;"></audio>
+        <button id="ttsPopupButton">🔊 Listen to Summary</button>...-->
+
+        <div id="audioPlayer">
+            <button id="playPauseBtn">▶️</button>
+            <input type="range" id="progressBar" value="0" min="0" max="100" step="1">
+            <span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
+            <button id="stopBtn">⏹</button>
+          
+        </div>
+
+
+        
+        <!-- Ask a Question Section -->
+        <h2>Ask a Question:</h2>
+        <input type="text" id="questionInput" placeholder="Type your question...">
+        <button id="askQuestion">Ask</button>
+
+        <!-- Answer Output -->
+        <div id="answer_output" class="question_output-box">
+            <p>Your answer will be displayed here.....</p>
+        </div>
+        <h2>Create PDF</h2>
+        <textarea id="textInput" placeholder="Enter your text here..."></textarea>
+        <button id="createPDF">Create & Download PDF</button>
+
+
+    </div>
+    <script src="{{ url_for('static', filename='js/PDF.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/TEXT.css') }}">
+</head>
+<body>
+    <div class="sidebar">
+        <h3>History</h3>
+        <div id="history"></div>
+    </div>
+    
+    <div class="container">
+        <h1>Text Summarizer</h1>
+        <div class="upload-box">
+            <textarea id="textInput" placeholder="Enter your text here..."></textarea>
+            <div class="options">
+                <button id="pointsSummary">Points Summary</button>
+                
+                <button id="shortSummary">Short Summary</button>
+            </div>
+        </div>
+
+    <!---  <textarea id="originalText"></textarea> -->
+
+
+
+
+        <div class="chat-container">
+            <h3>Summary</h3>
+            <div id="chat-messages"></div>
+            <button id="clear-summary">Clear</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/TEXT.js') }}"></script>
+</body>
+</html>
