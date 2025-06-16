@@ -1,0 +1,422 @@
+/* 🌙 Enhanced Dark Neon Theme */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: cyan;
+    --primary-dark: rgb(0, 180, 180);
+    --background-dark: #0a0a0a;
+    --background-light: #121212;
+    --card-bg: #111;
+    --text-light: #f0f0f0;
+    --gradient-bg: linear-gradient(to bottom, #0a0a0a, #121212);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--gradient-bg);
+    color: var(--text-light);
+    display: flex;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* Sidebar (History) */
+.sidebar {
+    width: 250px;
+    min-width: 250px;
+    background-color: rgba(17, 17, 17, 0.95);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 4px 0px 10px rgba(0, 255, 255, 0.4);
+    border-right: 2px solid var(--primary-color);
+    height: 100vh;
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.app-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid var(--primary-dark);
+}
+
+.app-title i {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-right: 10px;
+}
+
+.app-title span {
+    font-size: 20px;
+    font-weight: 600;
+    background: linear-gradient(45deg, #00ffff, #00ccff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.history-title {
+    padding: 15px;
+}
+
+.sidebar h3 {
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+#history {
+    padding: 0 10px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.history-item {
+    padding: 12px;
+    border-bottom: 1px solid #222;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.history-item:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+}
+
+/* Main Container */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    overflow-y: auto;
+    max-height: 100vh;
+    height: 100vh;
+}
+
+.header {
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.header h1 {
+    font-size: 28px;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--primary-color);
+    opacity: 0.8;
+    margin-left: 10px;
+}
+
+/* Upload Box */
+.upload-box {
+    border: 2px dashed var(--primary-color);
+    padding: 20px 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    color: var(--primary-color);
+    box-shadow: 0 0 10px var(--primary-color);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 600px;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin-bottom: 20px;
+}
+
+.upload-box i {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.upload-box:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 20px var(--primary-color);
+    transform: translateY(-5px);
+}
+
+/* Video Preview Container */
+#videoPreviewContainer {
+    margin: 15px 0;
+    text-align: center;
+    border: 2px solid var(--primary-dark);
+    padding: 15px;
+    border-radius: 15px;
+    background-color: rgba(17, 17, 17, 0.9);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    width: 90%;
+    max-width: 800px;
+    transition: all 0.3s ease;
+}
+
+.uploaded-video {
+    width: 100%;
+    max-height: 350px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px var(--primary-color);
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    padding: 10px 20px;
+    background-color: black;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 500;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+}
+
+.action-btn i {
+    margin-right: 8px;
+}
+
+.action-btn:hover {
+    background-color: var(--primary-dark);
+    color: white;
+    border-color: white;
+    box-shadow: 0 0 15px var(--primary-dark);
+    transform: scale(1.05);
+}
+
+/* Result Container */
+.result-container {
+    width: 90%;
+    max-width: 800px;
+    margin-top: 15px;
+    background-color: rgba(17, 17, 17, 0.9);
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.3);
+    overflow: hidden;
+    margin-bottom: 30px;
+    flex-shrink: 0;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-bottom: 1px solid var(--primary-dark);
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 12px;
+    background: transparent;
+    color: var(--text-light);
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.tab-btn.active {
+    background-color: rgba(0, 255, 255, 0.1);
+    color: var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.tab-btn:hover:not(.active) {
+    background-color: rgba(0, 255, 255, 0.05);
+}
+
+.tab-content {
+    padding: 15px;
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Chat & Notes Messages */
+.message {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: rgba(34, 34, 34, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+    transition: all 0.3s ease;
+}
+
+.message:hover {
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.message-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.message-title i {
+    margin-right: 8px;
+}
+
+.message-content {
+    line-height: 1.6;
+}
+
+/* Notes specific styling */
+.note-point {
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.note-point i {
+    color: var(--primary-color);
+    margin-right: 10px;
+    margin-top: 3px;
+    flex-shrink: 0;
+    font-size: 8px;
+}
+
+/* Key Frames */
+#key-frames-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.key-frame {
+    width: 150px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px var(--primary-color);
+    transition: 0.3s;
+}
+
+.key-frame:hover {
+    box-shadow: 0px 2px 20px var(--primary-color);
+    transform: scale(1.05);
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-dark);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        height: auto;
+        max-height: 200px;
+        min-width: 0;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    .header h1 {
+        font-size: 24px;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .action-btn {
+        width: 100%;
+    }
+    
+    .tab-content {
+        max-height: 250px;
+    }
+}
+
+/* Additional Fix for Result Visibility */
+.tab-content {
+    min-height: 100px;
+    overflow-y: auto;
+}
+
+#chat-messages, #notes-messages, #key-frames-container {
+    min-height: 50px;
+}

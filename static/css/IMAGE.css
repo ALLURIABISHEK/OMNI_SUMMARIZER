@@ -1,0 +1,1297 @@
+/* Dark Mode Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+     
+    min-height: 100vh;
+}
+
+
+
+/* Neon Glow Effect - Placed in Background */
+body::before {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.679), rgba(0, 255, 255, 0.2), transparent);
+    filter: blur(50px);
+    z-index: -1; /* Keeps it behind all elements */
+}
+
+/* Sidebar (History) */
+.sidebar {
+    width: 280px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 4px 0px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    height: 650px;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.679), rgba(0, 255, 255, 0.2), transparent);
+}
+
+.sidebar h3 {
+    text-align: center;
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+}
+
+.new-chat-btn {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.new-chat-btn:hover {
+    background-color: #0056b3;
+}
+
+.history-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 400px;
+    padding-right: 5px;
+}
+
+/* Main Container */
+.container {
+    flex: 1;
+    display: flex;
+    position: absolute; /* Allows free placement anywhere */
+
+    /* Example positions */
+    top: 100px;
+    left: 50px;
+    align-items: center;
+    justify-content: center;
+    gap: 40px; /* Space between upload section & preview */
+    padding: 20px;
+}
+
+/* Upload Box */
+.upload-box {
+    border: 2px dashed #555;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 270px; /* Set width similar to history sidebar */
+    height: 40px; /* Increase height to align vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* New positioning for free placement */
+    position: absolute; /* Allows precise control */
+    top:  -15px; /* Adjust vertical position */
+    left: 441px; /* Adjust horizontal position */
+}
+
+
+.upload-box:hover {
+    background-color: #222;
+}
+/* Placeholder text during upload */
+.upload-placeholder {
+    font-size: 18px;
+    color: #bbb;
+    margin-top: 10px;
+}
+
+/* Options Section */
+.options-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+
+/* Chat Container */
+.chat-container {
+    width: 80%;
+    max-width: 600px;
+    background-color: none;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    overflow-y: auto;
+    max-height: 400px;
+}
+
+.chat-messages {
+    max-height: 350px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+/* Scrollbars */
+.history-container::-webkit-scrollbar, .chat-messages::-webkit-scrollbar {
+    width: 5px;
+}
+
+.history-container::-webkit-scrollbar-thumb, .chat-messages::-webkit-scrollbar-thumb {
+    background-color: none;
+    border-radius: 5px;
+}
+
+/* Image Preview Container */
+#imagePreviewContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px; /* Adjust width */
+    height: 250px; /* Same height as upload box */
+    border-radius: 10px;
+    background-color: none; /* Slightly dark background */
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+
+    /* New positioning */
+    position: absolute; /* Allows free movement */
+    top: -10px; /* Adjust vertical position */
+    left: 420%; /* Adjust horizontal position */
+}
+
+
+/* Preview Image */
+.uploaded-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Ensure image fits well */
+    border-radius: 10px;
+}
+
+/* Hide elements initially  */
+.hidden {
+    display: none;
+}
+
+/* Summarize Button Styling */
+#optionsContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+
+/*======================================summary container==================*/
+
+/* Summary Container (ChatGPT-like box) */
+/* Summary Container (ChatGPT-like box) */
+#summaryContainer {
+    width: 1000px; /* Fixed width */
+    height: 250px; /* Fixed height */
+    background-color: none;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    font-family: 'Poppins', sans-serif;
+    overflow: auto; /* Allows scrolling if content exceeds height */
+    gap: 10px;
+    position: absolute; /* Keeps it in place */
+    top: 75px;
+    right: 125px; /* Adjust placement manually */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 320px;
+    margin-right: -10px;
+
+    /* Neon glow effect with cyan color */
+    --blur: 1.75rem;
+    --box-blur: calc(0.5 * var(--blur));
+    --glow: #00FFFF; /* Cyan neon color */
+    border: 3px solid var(--glow); /* Border color cyan */
+    box-shadow: 
+        0 0 12px var(--glow), /* Outer glow */
+        inset 0 0 8px var(--glow), /* Inner glow */
+        inset 0 0 var(--box-blur) var(--glow), 
+        0 0 var(--box-blur) var(--glow); /* Cyan glow effect */
+    color: var(--glow);
+    text-shadow: 0 0 var(--blur) var(--glow); /* Neon text effect */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Smooth transition for glow effect */
+}
+
+/* Hover effect to make the cyan neon glow more intense */
+#summaryContainer:hover {
+    box-shadow: 
+        0 0 20px var(--glow), /* Stronger outer glow */
+        inset 0 0 16px var(--glow), /* Stronger inner glow */
+        inset 0 0 calc(2 * var(--box-blur)) var(--glow), 
+        0 0 calc(2 * var(--box-blur)) var(--glow); /* Stronger cyan glow on hover */
+    border-color: #00FFFF; /* Cyan glow color on hover */
+}
+
+/* Hover effect to make the neon border glow */
+
+
+/* Copy Button Styling */
+.copy-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: #0056b3;
+}
+
+
+/*====================HORIZONTAL LINE============================*/
+/* Vertical Neon Line with Glowing Effect */
+.neon-vertical-line {
+    width: 2px; /* Set the width for the line */
+    height: 315%; /* Make it stretch vertically */
+    background-color: transparent;
+    border: 0;
+   
+    
+    /* Neon glow effect */
+    --glow: #00FFFF; /* Cyan glow color */
+    box-shadow: 
+        0 0 12px var(--glow), /* Outer glow */
+        inset 0 0 8px var(--glow), /* Inner glow */
+        0 0 4px var(--glow); /* Cyan glow effect */
+
+   position: absolute;
+   top : -30px;
+   left: 850px;
+    transition: box-shadow 0.3s ease; /* Smooth transition on hover */
+}
+
+/* Hover effect for the neon line */
+.neon-vertical-line:hover {
+    box-shadow: 
+        0 0 20px var(--glow), /* Stronger outer glow */
+        inset 0 0 16px var(--glow), /* Stronger inner glow */
+        0 0 8px var(--glow); /* Stronger cyan glow on hover */
+}
+
+
+.neon-horizontal-line {
+    width: 100%; /* Length of the line */
+    height: 4px; /* Thickness of the line */
+    background-color: transparent;
+    border: 0;
+
+    /* Neon glow effect */
+    --glow: #00FFFF; /* Cyan glow color */
+    box-shadow: 
+        0 0 12px var(--glow), /* Outer glow */
+        inset 0 0 8px var(--glow), /* Inner glow */
+        0 0 4px var(--glow); /* Cyan glow effect */
+
+    /* Absolute positioning for free placement */
+    position: absolute;
+    top: 850px; /* Adjust vertical position */
+    left: 0%; /* Adjust horizontal position */
+
+    /* Smooth transition effect on hover */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Optional: Make it glow brighter on hover */
+.neon-horizontal-line:hover {
+    box-shadow: 
+        0 0 20px #00FFFF,
+        inset 0 0 10px #00FFFF,
+        0 0 8px #00FFFF;
+}
+ /*===============================NEON HORIZONTAL LINE2 ===========================*/
+
+ 
+.neon-horizontal-line2 {
+    width: 100%; /* Length of the line */
+    height: 4px; /* Thickness of the line */
+    background-color: transparent;
+    border: 0;
+
+    /* Neon glow effect */
+    --glow: #00FFFF; /* Cyan glow color */
+    box-shadow: 
+        0 0 12px var(--glow), /* Outer glow */
+        inset 0 0 8px var(--glow), /* Inner glow */
+        0 0 4px var(--glow); /* Cyan glow effect */
+
+    /* Absolute positioning for free placement */
+    position: absolute;
+    top: 1950px; /* Adjust vertical position */
+    left: 0%; /* Adjust horizontal position */
+
+    /* Smooth transition effect on hover */
+    transition: box-shadow 0.3s ease;
+}
+
+/* Optional: Make it glow brighter on hover */
+.neon-horizontal-line2:hover {
+    box-shadow: 
+        0 0 20px #00FFFF,
+        inset 0 0 10px #00FFFF,
+        0 0 8px #00FFFF;
+}
+
+
+/* SECOND IMPLEMENTATION OF THE PROJECT FROM MULTI-MODLES  */
+
+
+ .neon-btn {
+            font-size: 18px;
+            padding: 12px 24px;
+            color: #fff;
+            background: transparent;
+            border: 2px solid #0ff;
+            border-radius: 5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            cursor: pointer;
+            position: relative  ;
+            transition: all 0.3s ease-in-out;
+            overflow: hidden;
+            left : -50px;
+            top : 90px;
+        }
+
+        .neon-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 255, 255, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .neon-btn:hover {
+            left: 0;
+        }
+
+        .neon-btn:hover {
+            box-shadow: 0 0 10px #0ff, 0 0 40px #0ff, 0 0 80px #0ff;
+            color: #0ff;
+            border-color: #0ff;
+        }
+
+
+        /*=====================three buttons css ===========*/
+.option-btn{
+        font-size: 9px;
+        padding: 12px 24px;
+        color: #fff;
+        background: transparent;
+        border: 2px solid #0ff;
+        border-radius: 5px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: pointer;
+        position: absolute;
+        transition: all 0.3s ease-in-out;
+        overflow: hidden;
+
+}
+#generatesumm{
+    top: 1300px;
+    left: 580px;;
+}
+
+.option-btn::before{
+content: "";
+
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: rgba(0, 255, 255, 0.2);
+transition: all 0.3s ease-in-out; }
+
+
+
+
+.option-btn:hover {
+    box-shadow: 0 0 5px #0ff, 0 0 15px rgba(0, 255, 255, 0.5);
+    color: #0ff;
+    border-color: #0ff;
+}
+
+.upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers horizontally */
+    justify-content: center; /* Centers vertically (if needed) */
+    gap: 10px; /* Adds space between buttons */
+    
+}
+
+#summarizeBtn {
+    top: 150px;
+    left: 440px;
+}
+#captionBtn{
+top: 150px;
+left : 600px;
+width: 175px;;
+}
+#askQuestionBtn{
+    top : 200px;
+    left : 442.3px;
+   width: 332px;
+
+}
+
+/*live cam section*/
+#livecamBtn{
+    top : 100px;
+    left : 442.3px;
+   width: 332px;
+
+}
+.hidden {
+    display: none;
+}
+#cameraStream {
+    width: 400px;
+    height: auto;
+    border: 2px solid #333;
+    margin-top: 10px;
+}
+
+
+
+
+/*===============inut question css =================*/
+
+#questionInput {
+    position: absolute; /* Allows you to move it anywhere */
+    left: 446px; /* Adjust as needed */
+    top: 250px;  /* Adjust as needed */
+    width: 300px;
+    height:15px;
+    background: transparent; /* No background */
+    border: 2px solid #0ff; /* Glowing border */
+    color: #0ff; /* Text color */
+    padding: 8px 12px;
+    font-size: 16px;
+    outline: none; /* Removes default focus outline */
+    
+    /* Soft glow effect */
+    box-shadow: 0 0 5px #0ff, 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+#questionInput:focus {
+    box-shadow: 0 0 10px #0ff, 0 0 20px rgba(0, 255, 255, 0.7); /* Stronger glow on focus */
+}
+
+
+/*Story generator */
+.story{
+    position: absolute;
+    top: 900px;
+    right: 600px;
+}
+
+
+
+    /* $ DRAG BOXES */
+   /* Neon Glow Effect Variables */
+:root {
+    --blur: 1.75rem;
+    --box-blur: calc(0.5 * var(--blur));
+    --glow: #00FFFF; /* Cyan neon color */
+}
+
+/* Base Drag Box Styling */
+/* Neon Glow Effect Variables */
+:root {
+    --blur: 1.75rem;
+    --box-blur: calc(0.5 * var(--blur));
+    --glow: #00FFFF; /* Cyan neon color */
+}
+
+/* Base Drag Box Styling with Persistent Glow */
+.story-upload-box {
+    border: 3px solid var(--glow);
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 270px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #bbb;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    user-select: none;
+    position: absolute;
+    box-shadow:
+        0 0 12px var(--glow),
+        inset 0 0 8px var(--glow),
+        inset 0 0 var(--box-blur) var(--glow),
+        0 0 var(--box-blur) var(--glow);
+    color: var(--glow);
+    text-shadow: 0 0 var(--blur) var(--glow);
+}
+
+/* Hide the actual file input */
+.story-file-input {
+    display: none;
+}
+
+/* Custom Positions */
+.story-upload-box-1 {
+    top: 1150px;
+    left: 50px;
+}
+
+.story-upload-box-2 {
+    top: 1150px;
+    left: 420px;
+}
+
+.story-upload-box-3 {
+    top: 1150px;
+    left: 780px;
+}
+
+.story-upload-box-4 {
+    top: 1150px;
+    left: 1150px;
+}
+.story-upload-box-5 {
+    top: 2278px;
+    left:1135px;
+}
+
+/* Shiny Effect for Uploaded Images */
+.story-upload-box img {
+    position: relative;
+    overflow: hidden;
+}
+
+/* The shiny animation overlay */
+.story-upload-box img::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+    z-index: 2;
+}
+
+@keyframes shine {
+    0% {
+        top: -100%;
+        left: -100%;
+    }
+    100% {
+        top: 100%;
+        left: 100%;
+    }
+}
+
+
+
+
+
+/* STORY CONTAINER SPACE CODE */
+/* Summary Container (ChatGPT-like box) */
+/* Summary Container (ChatGPT-like box) */
+#storyContainer {
+    width: 1000px; /* Fixed width */
+    height: 250px; /* Fixed height */
+    background-color: none;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    font-family: 'Poppins', sans-serif;
+    overflow: auto; /* Allows scrolling if content exceeds height */
+    gap: 10px;
+    position: absolute; /* Keeps it in place */
+    top: 1225px;
+    right: 235px; /* Adjust placement manually */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 320px;
+    margin-right: -10px;
+
+    /* Neon glow effect with cyan color */
+    --blur: 1.75rem;
+    --box-blur: calc(0.5 * var(--blur));
+    --glow: #00FFFF; /* Cyan neon color */
+    border: 3px solid var(--glow); /* Border color cyan */
+    box-shadow: 
+        0 0 12px var(--glow), /* Outer glow */
+        inset 0 0 8px var(--glow), /* Inner glow */
+        inset 0 0 var(--box-blur) var(--glow), 
+        0 0 var(--box-blur) var(--glow); /* Cyan glow effect */
+    color: var(--glow);
+    text-shadow: 0 0 var(--blur) var(--glow); /* Neon text effect */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Smooth transition for glow effect */
+}
+
+/* Hover effect to make the cyan neon glow more intense */
+#storyContainer:hover {
+    box-shadow: 
+        0 0 20px var(--glow), /* Stronger outer glow */
+        inset 0 0 16px var(--glow), /* Stronger inner glow */
+        inset 0 0 calc(2 * var(--box-blur)) var(--glow), 
+        0 0 calc(2 * var(--box-blur)) var(--glow); /* Stronger cyan glow on hover */
+    border-color: #00FFFF; /* Cyan glow color on hover */
+}
+
+/* Hover effect to make the neon border glow */
+
+
+/* Copy Button Styling */
+.copy-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: #0056b3;
+}
+
+
+/*==============================multi-model comparision with lot of models and API's ================================================*/
+.multi-model {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    top : 2050px; 
+    left : 320PX; 
+}
+
+/*Buttons code to sleect and to move LEFT , TOP , RIGHT , DOWN ....!*/
+.Gemini-id{
+    top :2230px;
+    left: 550px;
+}
+
+
+
+/*Selective buttons code */
+
+
+.Gemini-id{
+        font-size: 9px;
+        padding: 12px 24px;
+        color: #fff;
+        background: transparent;
+        border: 2px solid #0ff;
+        border-radius: 5px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        cursor: pointer;
+        position: absolute;
+        transition: all 0.3s ease-in-out;
+        overflow: hidden;
+
+}
+
+
+
+.Gemini-id{
+content: "";
+
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: rgba(0, 255, 255, 0.2);
+transition: all 0.3s ease-in-out; }
+
+
+
+
+.Gemini-id{
+    box-shadow: 0 0 5px #0ff, 0 0 15px rgba(0, 255, 255, 0.5);
+    color: #0ff;
+    border-color: #0ff;
+}
+
+
+
+
+/*MULTI -MODEL CSS 
+
+.upload-boxe {
+    border: 2px dashed #555;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 270px; /* Set width similar to history sidebar *
+    height: 40px; /* Increase height to align vertically *
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* New positioning for free placement *
+    position: absolute; /* Allows precise control *
+    top: 2255px; /* Adjust vertical position *
+    left: 160px; /* Adjust horizontal position 
+}
+
+
+.upload-boxe:hover {
+    background-color: #222;
+}
+
+#fileInputt {
+    display: none;
+}
+*/
+
+/* Summary Container (ChatGPT-like box) */
+#multi-Container {
+    width: 950px; /* Fixed width */
+    height: 250px; /* Fixed height */
+    background-color: transparent;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+    font-family: 'Poppins', sans-serif;
+    
+    /* Ensure scrolling works */
+    overflow-y: auto; /* Vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    
+    gap: 10px;
+    position: absolute; /* Keeps it in place */
+    top: 1925px;
+    right: 505px; /* Adjust placement manually */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Ensures new summaries stack at the top */
+    justify-content: flex-start; /* Prevents unnecessary spacing */
+    
+    margin-top: 320px;
+    margin-right: -10px;
+
+    /* Neon glow effect with cyan color */
+    --blur: 1.75rem;
+    --box-blur: calc(0.5 * var(--blur));
+    --glow: #00FFFF; /* Cyan neon color */
+    border: 3px solid var(--glow); /* Border color cyan */
+    box-shadow: 
+        0 0 12px var(--glow), /* Outer glow */
+        inset 0 0 8px var(--glow), /* Inner glow */
+        inset 0 0 var(--box-blur) var(--glow), 
+        0 0 var(--box-blur) var(--glow); /* Cyan glow effect */
+    color: var(--glow);
+    text-shadow: 0 0 var(--blur) var(--glow); /* Neon text effect */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease; /* Smooth transition for glow effect */
+}
+
+/* Hover effect to make the cyan neon glow more intense */
+#multi-Container:hover {
+    box-shadow: 
+        0 0 20px var(--glow), /* Stronger outer glow */
+        inset 0 0 16px var(--glow), /* Stronger inner glow */
+        inset 0 0 calc(2 * var(--box-blur)) var(--glow), 
+        0 0 calc(2 * var(--box-blur)) var(--glow); /* Stronger cyan glow on hover */
+    border-color: #00FFFF; /* Cyan glow color on hover */
+}
+
+/* Hover effect to make the neon border glow */
+
+
+/* Copy Button Styling */
+.copy-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+    transition: 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: #0056b3;
+}
+
+
+/*multi model code for button css*/
+.btnn{
+    width: 130px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+   
+}
+
+
+
+#blip {
+    font-size: 18px;
+    padding: 12px 24px;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #0ff;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative  ;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    left : -530px;
+    top : 2820px;
+    width: 150px;
+}
+
+#blip::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 10%;
+    height: 100%;
+    background: rgba(0, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+#blip:hover {
+    box-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 30px #0ff;
+    color: #0ff;
+    border-color: #0ff;
+}
+
+
+.info-box {
+    width: 240px;
+    height: 270px;
+    background-color: #121212;
+    border-left: 5px solid var(--glow, #00FFFF);
+    padding: 15px;
+    margin-bottom: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 5px;
+    color: #ffffff;
+    position: absolute;
+    top: 2590px;
+    left: 65px;
+    border: 2px solid var(--glow, #00FFFF);
+    box-shadow: 0 0 10px var(--glow, #00FFFF); /* Adds glow effect */
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Glow effect on hover */
+.info-box:hover {
+    box-shadow: 0 0 20px var(--glow, #00FFFF);
+    border-color: #00FFFF;
+}
+.forspace{
+    position: absolute;
+    top: 3400px;
+}
+
+/*======================gemini button second model =======================*/
+.gemini-btn{
+    width: 135px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+   
+}
+
+
+#gemini {
+    font-size: 18px;
+    padding: 12px 24px;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #0ff;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative  ;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    left : -375px;
+    top : 2820px;
+}
+
+#gemini::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 10%;
+    height: 100%;
+    background: rgba(0, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+#gemini:hover {
+    box-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 30px #0ff;
+    color: #0ff;
+    border-color: #0ff;
+}
+
+
+
+.info-box1 {
+    width: 240px;
+    height: 270px;
+    background-color: #121212;
+    border-left: 5px solid var(--glow, #00FFFF);
+    padding: 15px;
+    margin-bottom: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 5px;
+    color: #ffffff;
+    position: absolute;
+    top: 2590px;
+    left: 345px;
+    border: 2px solid var(--glow, #00FFFF);
+    box-shadow: 0 0 10px var(--glow, #00FFFF); /* Adds glow effect */
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Glow effect on hover */
+.info-box1:hover {
+    box-shadow: 0 0 20px var(--glow, #00FFFF);
+    border-color: #00FFFF;
+}
+
+/*===================================T5 model=============================*/
+.t5-btn{
+    width: 215px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+   
+}
+
+
+#t5{
+    font-size: 18px;
+    padding: 12px 24px;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #0ff;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative  ;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    left : -231px;
+    top : 2820px;
+}
+
+#t5::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 10%;
+    height: 100%;
+    background: rgba(0, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+#t5:hover {
+    box-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 30px #0ff;
+    color: #0ff;
+    border-color: #0ff;
+}
+
+
+
+.info-box2 {
+    width: 240px;
+    height: 270px;
+    background-color: #121212;
+    border-left: 5px solid var(--glow, #00FFFF);
+    padding: 15px;
+    margin-bottom: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 5px;
+    color: #ffffff;
+    position: absolute;
+    top: 2590px;
+    left: 625px;
+    border: 2px solid var(--glow, #00FFFF);
+    box-shadow: 0 0 10px var(--glow, #00FFFF); /* Adds glow effect */
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Glow effect on hover */
+.info-box2:hover {
+    box-shadow: 0 0 20px var(--glow, #00FFFF);
+    border-color: #00FFFF;
+}
+
+
+
+/*=================================== ViT-GPT2=============================*/
+.vit-btn{
+    width: 158px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+   
+}
+
+
+#vit{
+    font-size: 18px;
+    padding: 12px 24px;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #0ff;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative  ;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    left : -117px;
+    top : 2820px;
+    width : 180px;
+}
+
+#vit::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 10%;
+    height: 100%;
+    background: rgba(0, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+#vit:hover {
+    box-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 30px #0ff;
+    color: #0ff;
+    border-color: #0ff;
+}
+
+
+
+.info-box3 {
+    width: 240px;
+    height: 270px;
+    background-color: #121212;
+    border-left: 5px solid var(--glow, #00FFFF);
+    padding: 15px;
+    margin-bottom: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 5px;
+    color: #ffffff;
+    position: absolute;
+    top: 2590px;
+    left: 905px;
+    border: 2px solid var(--glow, #00FFFF);
+    box-shadow: 0 0 10px var(--glow, #00FFFF); /* Adds glow effect */
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Glow effect on hover */
+.info-box3:hover {
+    box-shadow: 0 0 20px var(--glow, #00FFFF);
+    border-color: #00FFFF;
+}
+
+
+/*=================================== GIT=============================*/
+.git-btn{
+    width: 148px;
+    height: 50px;
+    cursor: pointer;
+    position: absolute;
+   
+}
+
+
+#git{
+    font-size: 18px;
+    padding: 12px 24px;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #0ff;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative  ;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    left : 1px;
+    top : 2820px;
+}
+
+#git::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 10%;
+    height: 100%;
+    background: rgba(0, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+#git:hover {
+    box-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 30px #0ff;
+    color: #0ff;
+    border-color: #0ff;
+}
+
+
+
+.info-box4 {
+    width: 240px;
+    height: 270px;
+    background-color: #121212;
+    border-left: 5px solid var(--glow, #00FFFF);
+    padding: 15px;
+    margin-bottom: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 5px;
+    color: #ffffff;
+    position: absolute;
+    top: 2590px;
+    left: 1185px;
+    border: 2px solid var(--glow, #00FFFF);
+    box-shadow: 0 0 10px var(--glow, #00FFFF); /* Adds glow effect */
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Glow effect on hover */
+.info-box:hover {
+    box-shadow: 0 0 20px var(--glow, #00FFFF);
+    border-color: #00FFFF;
+}
+
+/*==================================compare all models =============================*/
+/*======================gemini button second model =======================*/
+.sumall{
+    width: 15px;
+    height: 65px;
+    cursor: pointer;
+    position: absolute;
+   
+}
+
+
+#allin {
+    font-size: 18px;
+    padding: 12px 24px;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #0ff;
+    border-radius: 5px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative  ;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    left : -350px;
+    top : 2995px;
+    width: 250px;
+}
+
+#allin::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 10%;
+    height: 100%;
+    background: rgba(0, 255, 255, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+
+
+#allin:hover {
+    box-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 30px #0ff;
+    color: #0ff;
+    border-color: #0ff;
+}
+
+
+
+.info-box5 {
+    width: 1365px;
+    height: 125px;
+    background-color: #121212;
+    border-left: 5px solid var(--glow, #00FFFF);
+    padding: 15px;
+    margin-bottom: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-radius: 5px;
+    color: #ffffff;
+    position: absolute;
+    top: 2950px;
+    left: 65px;
+    border: 2px solid var(--glow, #00FFFF);
+    box-shadow: 0 0 10px var(--glow, #00FFFF); /* Adds glow effect */
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+/* Glow effect on hover */
+.info-box5:hover {
+    box-shadow: 0 0 20px var(--glow, #00FFFF);
+    border-color: #00FFFF;
+}

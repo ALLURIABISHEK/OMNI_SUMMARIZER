@@ -1,0 +1,732 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        overflow-x: hidden;
+        background-color: black;
+        min-height: 100vh;
+        position: relative;
+    }
+    
+    /* Neon Glow Effect - Placed in Background */
+    body::before {
+        content: "";
+        position: absolute;
+        width: 60%;
+        height: 40%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(circle, rgba(0, 0, 0, 0.679), rgba(0, 255, 255, 0.2), transparent);
+        filter: blur(50px);
+        z-index: -1; /* Keeps it behind all elements */
+    }
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    background: transparent;
+    padding: 15px 0;
+    z-index: 1000;
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+.navbar ul li {
+    margin: 0 15px;
+}
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Adjusted Navbar Actions */
+.nav__actions {
+    margin-right: 13%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: -1.2%;
+}
+.profile-icon {
+    margin-left: auto;
+}
+.login img {
+    width: 25px;
+    height: 25px;
+}
+
+/* Video Section */
+.video-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ensures full viewport height */
+    overflow: hidden;
+    background: black; /* Prevents white space from showing */
+}
+
+#bg-video {
+    position: fixed; /* Ensures the video stays fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay Text */
+.overlay-text {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Move the Logo */
+.logo {
+    max-width: 450px;
+    height: auto;
+    background: transparent;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Overlay Content */
+.overlay-content {
+    text-align: center;
+    color: white;
+    max-width: 500px;
+    font-size: 17px;
+    line-height: 1.4;
+    font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+}
+
+/* Button */
+@keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+.explore-btn {
+    font-family: 'Neon Glow', sans-serif;
+    font-size: 1rem;
+    color: #0ff; /* Neon Cyan */
+    background: transparent;
+    border: 3px solid #0ff;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 0 15px #0ff, 0 0 30px #0ff; /* Neon Glow */
+    animation: flicker 1.5s infinite alternate; /* Flickering Effect */
+    border-radius:105%;
+    margin-top: 15%;
+}
+
+.explore-btn:hover {
+    color: #ff00ff; /* Neon Pink */
+    border-color: #ff00ff;
+    box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+    transform: scale(1.1);
+}
+
+.explore-btn:active {
+    transform: scale(0.95);
+}
+
+
+
+/* Content Section */
+.content-section {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    padding: 50px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+
+    /* FIXING WHITE GAP */
+    margin-top: 0; /* Ensure no unnecessary space */
+    padding-top: 5vh; /* Add space inside instead of negative margins */
+}
+
+/* Glow Effect */
+.content-section h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+.content-section p {
+    font-size: 1.2rem;
+    color: #ddd;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* Glowing Border */
+.content-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff00ff, #00ffff);
+    box-shadow: 0 0 10px #ff00ff, 0 0 20px #00ffff;
+}
+
+
+/* Second Video Styling */
+.second-video-container {
+    width: 100%;
+    max-width: 900px; /* Adjust width */
+    margin: 20px auto; /* Center the video */
+    overflow: hidden;
+    border-radius: 10px; /* Optional rounded corners */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Glow effect */
+}
+
+#second-video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border: 2px solid #fff; /* Optional border */
+}
+
+/*=====================================================*/
+.contents-container {
+    max-width: 800px;
+    margin: 20px auto;
+}
+.video-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.text-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.text {
+    width: 50%;
+    font-size: 18px;
+}
+.image {
+    width: 50%;
+}
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+@media (max-width: 768px) {
+    .text-image-container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .text, .image {
+        width: 100%;
+    }
+}
+/*FOOTER*/
+
+/*=============== FOOTER ===============*/
+.footer{
+    padding-block:4rem 6rem ;
+  }
+  
+  .footer__container{
+  row-gap: 3rem;
+  }
+  
+  
+
+ 
+  
+  
+  
+  
+
+  /*=============== SCROLL BAR ===============*/
+  ::-webkit-scrollbar{
+    width: .6rem;
+    border-radius: .5rem;
+    background-color: hsla(230, 16%, 85%);
+  }
+  
+  ::-webkit-scrollbar-thumb{
+  border-radius: .5rem;
+  background-color: hsla(230, 16%, 65%);
+  }
+  
+  
+  ::-webkit-scrollbar-thumb:hover{
+     background-color: hsla(230, 16%, 55%);
+    }
+    
+  
+  
+  /*=============== SCROLL UP ===============*/
+  .scrollup
+  {
+    position: fixed;
+    right: 1rem;
+    bottom: -50%;
+    background-color: var(--container-color);
+    box-shadow: 0 2px 8px hsla(0, 0%, 0%, .1);
+    display: inline-flex;
+    padding: 6px;
+    font-size: 1.25rem;
+    color: var(--title-color);
+    z-index: var(--z-tooltip);
+    transition: bottom .4s, transform .4s, background-color .4s;
+  }
+  
+  .scrollup:hover{
+    transform: translateY(-.5rem);
+  }
+  
+  /* Show Scroll Up */
+  .show-scroll{
+    bottom: 6rem;
+  }
+  
+
+  /*=========================summarizer neon buttons section=======================*/
+  .summarizer-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2-column layout */
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 320px;
+    height: 250px;
+    margin: 45px auto; /* Small gap between sections */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    padding: 15px;
+    border: 3px solid cyan;
+    box-shadow: 0 0 12px cyan;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.9);
+    margin-left:250px; /* Move left by 100px, adjust as needed */
+    margin-top: 10%;
+ 
+
+}
+.whatis {
+   
+    color: #fff;
+  }
+
+  .whatis {
+    text-align: center;
+    font-size: 2rem;
+  }
+  
+  .whatis .regular {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
+  
+  .whatis .slab {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+  }
+  
+
+  .summarizer-text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;        /* Regular weight */
+    font-size: 1rem;         /* Good readable size, adjust if needed */
+    line-height: 1.6;        /* Adds nice spacing between lines */
+    color: #333333;          /* Dark grey for easy reading */
+    max-width: 600px;        /* Optional: control width for better readability */
+    margin: 0 auto;          /* Center horizontally */
+  }
+  
+  
+/* Button Style */
+.summarizer-box {
+    width: 140px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid cyan;
+    box-shadow: 0 0 10px cyan;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.summarizer-box:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 18px cyan;
+}
+
+/* Scroll Reveal Effect */
+.summarizer-section.reveal {
+    opacity: 1;
+    transform: translateY(0);
+}
+.summarizer-text {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+    transition: transform 0.3s ease;
+    margin-left: 55%;
+    margin-top: -17%;
+    position: relative;
+}
+
+.summarizer-text span {
+    position: relative; /* Enable relative positioning for each span */
+    display: inline-block; /* Ensure the underline only affects the text */
+    padding-bottom: 3px; /* Add space for the underline */
+}
+
+/* Hover Effect - Pink Glow */
+.summarizer-text span:hover {
+    transform: scale(1.1);
+}
+
+/* Glowing Underline on Hover for each span */
+.summarizer-text span::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: #ff1493; /* Pink color */
+    bottom: 0; /* Position the line at the bottom */
+    left: 50%; /* Start from the center */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+/* Show the underline on hover */
+.summarizer-text span:hover::after {
+    width: 100%; /* Full width of the word */
+    left: 0; /* Align to the left */
+}
+
+/*==================LINE BREAK===========================*/
+
+/* Neon Horizontal Line */
+.neon-line {
+    width: 100%; /* Adjust width as needed */
+    height: 2px; /* Line thickness */
+    background: rgba(0, 0, 0, 0.8); /* Background color */
+    border: none; /* Remove default border */
+    box-shadow: 0 0 10px cyan, 0 0 20px pink; /* Neon glow effect */
+    margin: 20px 0; /* Space around the line */
+    transition: box-shadow 0.3s ease; /* Smooth glow transition */
+   
+}
+
+.neon-lines { 
+    width: 100%; /* Adjust width as needed */
+    height: 2px; /* Line thickness */
+    background: rgba(0, 0, 0, 0.8); /* Background color */
+    border: none; /* Remove default border */
+    box-shadow: 0 0 10px cyan, 0 0 20px pink; /* Neon glow effect */
+    margin: 20px 0; /* Space around the line */
+    margin-top: 160px; /* Move the line down by 50px */
+    transition: box-shadow 0.3s ease; /* Smooth glow transition */
+}
+
+/* Neon Vertical Line */
+.neon-vertical-line {
+    height: 300px; /* Fixed height for the line (adjust as needed) */
+    width: 2px; /* Line thickness */
+    background: rgba(0, 0, 0, 0.8); /* Background color */
+    border: none; /* Remove default border */
+    box-shadow: 0 0 10px cyan, 0 0 20px pink; /* Neon glow effect */
+    margin: 20px auto; /* Center the line horizontally */
+    transition: box-shadow 0.3s ease; /* Smooth glow transition */
+    margin-top:-350px;
+}
+
+/* Hover Effect - Glow Increase */
+.neon-vertical-line:hover {
+    box-shadow: 0 0 18px cyan, 0 0 30px pink; /* Glow intensity on hover */
+}
+
+/*=========================THIRD-SECTION=======================*/
+.container {
+    margin-top: 50px;
+    color: white;
+    font-size: large;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+/* Hover effect for the whole section */
+.container h2, .whatis:hover {
+    color: #ff1493; /* Pink color */
+    text-decoration: underline; /* Pink underline */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+.features-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10%;
+
+}
+.feature-box1 , .feature-box2, .feature-box3 , .feature-box4 {
+    width: 220px;
+    padding: 20px;
+    border: 3px solid cyan;
+    box-shadow: 0 0 12px cyan;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-box1 , .feature-box2, .feature-box3 , .feature-box4:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px cyan;
+
+
+
+    
+}
+.feature-box1 , .feature-box2, .feature-box3 , .feature-box4 h3 {
+    margin: 0;
+    color: white;
+}
+.feature-box1 , .feature-box2, .feature-box3 , .feature-box4 p {
+    margin-top: 5px;
+    color: #ccc;
+}
+/*===========================FOOTER-====================*/
+/* Footer Styling */
+.footer {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(10, 10, 10, 1) 100%);
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated background glow effect */
+.footer::before {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 40%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(255, 20, 147, 0.2), rgba(0, 255, 255, 0.1), transparent);
+    filter: blur(80px);
+    z-index: 0;
+}
+
+/* Footer Container */
+.footer__container {
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Footer Logo Section */
+.footer__logo-section {
+    margin-bottom: 30px;
+}
+
+.footer__logo img {
+    width: 180px;
+    transition: transform 0.3s ease-in-out;
+   padding: 0%;
+}
+.footer__logo img {
+    margin-left: -550px;  /* Move Right */
+    /* margin-right: 20px; Move Left */
+}
+
+.footer__logo img:hover {
+    transform: scale(1.1);
+}
+
+
+
+.footer__description {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Footer Grid */
+.footer__data {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Footer Titles */
+.footer__title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    position: relative;
+    color: #0ff;
+    transition: color 0.3s ease;
+}
+
+.footer__title:hover {
+    color: #ff1493;
+}
+
+/* Footer Links */
+.footer__links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer__link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+    color: #ff1493;
+}
+
+/* Contact */
+.footer__info {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Social Media Icons */
+.footer__social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer__social-link {
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer__social-link:hover {
+    color: #ff1493;
+    transform: translateY(-3px);
+}
+
+/* Payment Icons */
+.footer__payments {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer__payments i {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer__payments i:hover {
+    color: #0ff;
+    transform: scale(1.1);
+}
+
+/* Footer Copy */
+.footer__copy {
+    font-size: 14px;
+    opacity: 0.7;
+    margin-top: 20px;
+    display: block;
+}
+
+/* Glowing Border Hover Effect */
+.footer__link,
+.footer__title {
+    position: relative;
+}
+
+.footer__link::before,
+.footer__title::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #ff1493;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.footer__link:hover::before,
+.footer__title:hover::before {
+    width: 100%;
+    left: 0;
+}
+
+
+ 
+#lottie-container {
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 10;
+}
+
+#blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    display: none;
+}

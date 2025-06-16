@@ -1,0 +1,191 @@
+/* Dark Mode Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Sidebar (History) */
+.sidebar {
+    width: 280px;
+    background-color: #1e1e1e;
+    padding: 20px;
+    overflow-y: auto;
+    box-shadow: 4px 0px 10px rgba(0, 255, 255, 0.5); /* Neon cyan glow */
+    border-right: 3px solid #00FFFF; /* Right-side glow effect */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Glow effect on hover */
+.sidebar:hover {
+    box-shadow: 6px 0px 15px rgba(0, 255, 255, 0.8);
+    border-color: #00FFFF;
+}
+
+/* Title with neon underline */
+.sidebar h3 {
+    text-align: center;
+    border-bottom: 2px solid #00FFFF;
+    padding-bottom: 10px;
+    color: #00FFFF;
+    text-shadow: 0 0 10px #00FFFF;
+}
+
+/* History item styling */
+.history-item {
+    padding: 12px;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    transition: 0.3s;
+    color: white;
+    background-color: #222;
+    border-radius: 5px;
+}
+
+/* Hover effect for history items */
+.history-item:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+
+/* Main Container */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Text Input Box */
+.upload-box {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    position: relative;
+
+    /* Neon glow effect ONLY on the outer box */
+    --glow: #00FFFF; /* Cyan neon color */
+    border: 3px solid var(--glow);
+    box-shadow: 0 0 12px var(--glow); /* Outer glow only */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover effect to make the outer glow more intense */
+.upload-box:hover {
+    box-shadow: 0 0 20px var(--glow);
+    border-color: #00FFFF;
+}
+
+/* Remove glow from inside elements */
+#textInput {
+    width: 590px;
+    height: 150px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    resize: none;
+    box-shadow: none; /* Remove any shadow */
+    border: none; /* No border to prevent extra glow */
+    margin-left: -05px;
+}
+
+#textInput:focus {
+    outline: 2px solid #555; /* Keep focus visible but subtle */
+}
+
+
+
+
+/* Buttons */
+.options {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.options button {
+    flex: 1;
+    margin: 5px;
+    padding: 12px;
+    background-color: #444;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+     /* Neon glow effect ONLY on the outer box */
+     --glow: #00FFFF; /* Cyan neon color */
+     border: 3px solid var(--glow);
+     box-shadow: 0 0 12px var(--glow); /* Outer glow only */
+     transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.options button:hover {
+    background-color: #5eaac3;
+}
+
+/* Chat Container */
+.chat-container {
+    width: 80%;
+    max-width: 600px;
+    margin-top: 20px;
+    background-color: #111; /* Darker background for better neon effect */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Neon glow effect */
+    border: 2px solid #00FFFF; /* Cyan neon border */
+    text-shadow: 0 0 8px #00FFFF; /* Neon text glow */
+}
+
+/* Chat messages with soft glow */
+.chat-message {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #222; /* Dark background */
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Neon glowing clear button */
+#clear-summary {
+    width: 80px;
+    height: 35px;
+    background-color: #111; /* Dark background */
+    color: #00FFFF; /* Cyan text */
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    border: 2px solid #00FFFF;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+    transition: 0.3s ease-in-out;
+    text-shadow: 0 0 5px #00FFFF;
+}
+
+/* Stronger glow effect on hover */
+#clear-summary:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 1);
+    border-color: #00FFFF;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
