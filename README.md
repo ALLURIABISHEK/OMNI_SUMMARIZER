@@ -74,16 +74,12 @@ Upload PDF documents to extract, summarize, and download enhanced versions with 
 ### 🎬 **Video Summarization**
 Extract key scenes and generate comprehensive summaries from uploaded videos or URLs.
 
-*[Screenshots placeholder - Add your video processing interface here]*
+![Screenshot (167)](https://github.com/user-attachments/assets/abab5765-132b-47ed-9910-37566fdf6619)
+
 
 ---
 
-### 🔬 **AI Model Comparison**
-Unique feature allowing side-by-side comparison of different AI models with response time analytics.
 
-*[Screenshots placeholder - Add your model comparison dashboard here]*
-
----
 
 ## 🛠️ **Technology Stack**
 
@@ -144,7 +140,7 @@ Unique feature allowing side-by-side comparison of different AI models with resp
    python app.py
    ```
 
-*[Screenshots placeholder - Add installation/setup screenshots here]*
+
 
 ---
 
@@ -156,7 +152,7 @@ Unique feature allowing side-by-side comparison of different AI models with resp
 3. **Generate Summary** - Click process and wait for results
 4. **Download/Share** - Export your summarized content
 
-*[Screenshots placeholder - Add usage workflow screenshots here]*
+
 
 ---
 
@@ -165,7 +161,6 @@ Unique feature allowing side-by-side comparison of different AI models with resp
 ### **Real-Time Processing Dashboard**
 Monitor AI model performance with live charts and analytics.
 
-*[Screenshots placeholder - Add dashboard screenshots here]*
 
 ---
 
@@ -175,7 +170,7 @@ Monitor AI model performance with live charts and analytics.
 - Downloadable PDFs
 - Interactive visualizations
 
-*[Screenshots placeholder - Add output format examples here]*
+
 
 ---
 
@@ -216,7 +211,7 @@ DATABASE_URL=mysql://username:password@localhost/omni_summarizer
 SECRET_KEY=your_secret_key_here
 ```
 
-*[Screenshots placeholder - Add configuration screenshots here]*
+
 
 ---
 
@@ -228,7 +223,6 @@ SECRET_KEY=your_secret_key_here
 - **ViT-GPT**: Superior visual question answering
 - **GIT & CLIP**: Optimal for multi-modal tasks
 
-*[Screenshots placeholder - Add performance comparison charts here]*
 
 ---
 
@@ -255,11 +249,6 @@ We welcome contributions! Please follow these steps:
 
 ---
 
-## 📜 **License**
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
 
 ## 🎯 **Project Impact**
 
@@ -283,9 +272,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/yourusername)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourprofile)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your.email@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ALLURIABISHEK)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://in.linkedin.com/in/alluri-abishek-kumar)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your.aaarts45516@gmail.com)
 
 </div>
 
