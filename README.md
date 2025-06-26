@@ -32,7 +32,10 @@
 ### 📝 **Text Summarization**
 Transform lengthy text into concise, meaningful summaries with customizable output formats.
 
-*[Screenshots placeholder - Add your text summarization interface here]*
+![WhatsApp Image 2025-06-26 at 12 17 03 PM (1)](https://github.com/user-attachments/assets/ba9a4ff0-be2e-4329-9043-309329ac0864)
+![WhatsApp Image 2025-06-26 at 12 17 03 PM](https://github.com/user-attachments/assets/4a789fee-49eb-4e23-9fed-bbbace0a6d2e)
+
+
 
 ---
 
