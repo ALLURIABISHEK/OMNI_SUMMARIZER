@@ -42,17 +42,32 @@ Transform lengthy text into concise, meaningful summaries with customizable outp
 ### 📄 **PDF Processing** 
 Upload PDF documents to extract, summarize, and download enhanced versions with intelligent content analysis.
 
-*[Screenshots placeholder - Add your PDF processing workflow here]*
+
+![WhatsApp Image 2025-06-26 at 12 17 03 PM (1)](https://github.com/user-attachments/assets/d4bef778-5417-4239-8d2e-586bdfd19361)
+![WhatsApp Image 2025-06-26 at 12 17 03 PM](https://github.com/user-attachments/assets/0f6a2a09-eeeb-4b87-a5ab-b15a8f39f1e9)
+
 
 ---
 
 ### 🖼️ **Image Intelligence**
 - **Smart Captioning** - Generate descriptive captions for any image
-- **Visual Q&A** - Ask questions about image content
-- **Story Generation** - Create narratives from multiple images
-- **Multi-Model Analysis** - Compare AI model performance
+- ![WhatsApp Image 2025-06-26 at 12 16 52 PM](https://github.com/user-attachments/assets/003c8c48-101b-4231-81ff-2d888fb54bee)
+- ![WhatsApp Image 2025-06-26 at 12 16 53 PM](https://github.com/user-attachments/assets/9bf5652d-6d84-4050-b344-aae6c25ef319)
 
-*[Screenshots placeholder - Add your image processing examples here]*
+- **Visual Q&A** - Ask questions about image content
+- ![WhatsApp Image 2025-06-26 at 12 16 54 PM](https://github.com/user-attachments/assets/1fb3cfb2-9eec-421e-a295-82b38ce86a1b)
+
+- **Story Generation** - Create narratives from multiple images
+- ![WhatsApp Image 2025-06-26 at 12 16 54 PM (1)](https://github.com/user-attachments/assets/8e2c6ef9-7d45-4198-bfe6-6786defcd25f)
+
+- **Multi-Model Analysis** - Compare AI model performance
+-
+- ![WhatsApp Image 2025-06-26 at 12 16 55 PM](https://github.com/user-attachments/assets/022b0640-a57b-46f4-ae27-f4bd72f105c6)
+![WhatsApp Image 2025-06-26 at 12 16 55 PM (1)](https://github.com/user-attachments/assets/9e59f912-8b80-4fb5-ae3b-b1e2952f2945)
+
+
+
+
 
 ---
 
