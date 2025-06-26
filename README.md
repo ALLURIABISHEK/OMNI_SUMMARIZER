@@ -1,24 +1,64 @@
-# OMNI_SUMMARIZER
-Omni Summarizer is a multi-modal AI-powered summarization platform I built using Flask, Python, and front-end technologies. The system allows users to generate intelligent summaries from various content types including text, PDFs, images, and videos.
+# Omni Summarizer - Multi-Modal AI Summarization Platform
 
-I integrated multiple vision-language models like BLIP-2, Gemini 1.5, ViT-GPT, GIT, and CLIP to perform tasks such as caption generation, visual question answering (VQA), and multi-model comparisons.
+![Omni Summarizer Banner](assets/banner.png) *(Create a banner image showing the interface with multiple model outputs)*
 
-The platform features:
+A multi-modal AI-powered summarization platform that generates intelligent summaries from text, PDFs, images, and videos using state-of-the-art vision-language models.
 
-A clean and responsive user interface.
+## ✨ Key Features
 
-Drag-and-drop support for images and PDFs.
+<div align="center">
+  <img src="assets/feature1.gif" width="30%" alt="Drag and drop interface">
+  <img src="assets/feature2.gif" width="30%" alt="Model comparison">
+  <img src="assets/feature3.gif" width="30%" alt="Downloadable summaries">
+</div>
 
-Auto-generated downloadable summaries.
+- **Multi-format support**: Text, PDFs, images, and videos
+- **Integrated AI models**: BLIP-2, Gemini 1.5, ViT-GPT, GIT, CLIP
+- **Smart comparisons**: Side-by-side model outputs
+- **Image storytelling**: Create narratives from multiple images
+- **Performance metrics**: Real-time response timers
 
-Side-by-side output comparison from multiple models.
+## 🛠️ Technologies Used
 
-Image storytelling using multiple uploads.
+<div align="center">
+  <img src="https://img.shields.io/badge/Python-FFD43B?logo=python&logoColor=blue" alt="Python">
+  <img src="https://img.shields.io/badge/Flask-000000?logo=flask" alt="Flask">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript" alt="JavaScript">
+  <img src="https://img.shields.io/badge/HuggingFace-FFD21E?logo=huggingface" alt="HuggingFace">
+</div>
 
-Real-time response timers for each AI model.
+## 🎥 Demo
 
-All the backend logic is modularized, and the frontend is animated and responsive for a professional user experience. The goal of this project was to build an all-in-one summarization tool using the latest advancements in multimodal AI.
+[![Demo Video](assets/video_thumbnail.png)](https://youtube.com/your-demo-link) *(Clickable thumbnail for demo video)*
 
+## 📊 Model Comparison
 
+| Feature         | BLIP-2 | Gemini 1.5 | ViT-GPT |
+|-----------------|--------|------------|---------|
+| Accuracy        | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐   | ⭐⭐⭐   |
+| Speed           | ⭐⭐    | ⭐⭐⭐      | ⭐⭐⭐⭐ |
+| Detail          | ⭐⭐⭐   | ⭐⭐⭐⭐⭐   | ⭐⭐    |
 
-![Screenshot 2025-02-16 104737](https://github.com/user-attachments/assets/87e04a6d-be7d-49ad-a03a-e5ed0959ad64)
+## 🖼️ Screenshots
+
+<div align="center">
+  <img src="assets/screenshot1.png" width="45%" alt="Main Interface">
+  <img src="assets/screenshot2.png" width="45%" alt="PDF Summary">
+</div>
+
+<div align="center">
+  <img src="assets/screenshot3.png" width="45%" alt="Image Storytelling">
+  <img src="assets/screenshot4.png" width="45%" alt="Model Comparison">
+</div>
+
+## 🚀 Getting Started
+
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/omni-summarizer.git
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the application
+flask run
